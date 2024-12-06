@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    <h1>Fifth Round</h1>
+
+    <div class="instructions">
+        <p>
+            Imagine you are a student representative, and your goal is to collaborate with the university board to plan the usage of a new student building. Participating in the discussions ensures that students' voices are heard and that the building design meets their needs. However, there is a risk that the university may not take your input seriously (i.e., the other party defects) and may use your attendance only to legitimize their decision-making process. This could harm your reputation and fail to serve the interests of the students.
+        </p>
+        <p>
+            On the other hand, if you choose not to participate in the discussion (i.e., you refuse to cooperate), the resulting building design may not align with students' needs, but you will avoid potential negative consequences.
+        </p>
+        <p>
+            The costs and benefits of joining or not joining the cooperation meeting are represented in the payoff matrix below.
+        </p>
+
+        <h3>Payoff Matrix:</h3>
+        <ul>
+            <li>If both you and the university cooperate, both parties benefit equally with a payoff of <strong>{{ payoff_CC }}</strong>.</li>
+            <li>If you cooperate but the university defects, you receive a payoff of <strong>{{ payoff_CD }}</strong>, reflecting harm to your reputation and student interests.</li>
+            <li>If you defect while the university cooperates, you receive a payoff of <strong>{{ payoff_DC }}</strong>, representing a personal gain.</li>
+            <li>If both refuse to cooperate, neither gains much, resulting in a payoff of <strong>{{ payoff_DD }}</strong> for both, which reflects a neutral outcome.</li>
+        </ul>
+
+        <p>
+            Please consider these payoffs carefully before making your decision.
+        </p>
+        <p>
+            Note that after each round of this discussion, there is a random chance that the cooperation meetings will continue. The probability of continuing is <strong>50%</strong>. Therefore, the game may end randomly after any round, or continue until a maximum of 20 rounds.
+        </p>
+    </div>
+
+    <form method="post">
+        {{ formfields }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block content %}
+    <h3>Survey</h3>
+    <p>{{ scale_description }}</p>
+    <form method="post">
+        <div class="question-group">
+            {{ formfield "APS5" }}
+            {{ formfield "APS7" }}
+            {{ formfield "CP11" }}
+            {{ formfield "CP12" }}
+        </div>
+        
+        <div class="question-group">
+            {{ formfield "CPV1" }}
+            {{ formfield "CPV2" }}
+            {{ formfield "CPV6" }}
+            {{ formfield "CPV7" }}
+        </div>
+        
+        <div class="question-group">
+            {{ formfield "COM2" }}
+            {{ formfield "COM3" }}
+            {{ formfield "COM5" }}
+            {{ formfield "COM6" }}
+        </div>
+        
+        <div class="question-group">
+            {{ formfield "SS2" }}
+            {{ formfield "SS3" }}
+            {{ formfield "SS4" }}
+            {{ formfield "SS7" }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

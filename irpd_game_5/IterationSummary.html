@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block content %}
+    <h3>Iteration {{ iteration_number }} Summary</h3>
+    <p>Your total payoff for this iteration: {{ iteration_payoff }} points.</p>
+
+    <!-- Include a form for the next page navigation -->
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+{% endblock %}

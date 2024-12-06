@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block content %}
+    <h3>Final Results</h3>
+    <p>Your total payoff: {{ total_payoff }} points</p>
+
+    <!-- Include a form for the next page navigation -->
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block content %}
+    <h3>Demographic Information</h3>
+    <p>{{ instructions }}</p>
+    <form method="post">
+        {{ formfield "age" }}
+        {{ formfield "gender" }}
+        {{ formfield "race" }}
+        {{ formfield "econ_class" }}
+        <hr>
+        <h4>Game-related Questions</h4>
+        <p>Please answer the following questions based on the game you just completed:</p>
+        {{ formfield "active_role" }}
+        {{ formfield "confidence" }}
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

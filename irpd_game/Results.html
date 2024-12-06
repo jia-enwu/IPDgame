@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    <h1>Results</h1>
+
+    <!-- Display the player's own decision and payoff -->
+    <p>Your decision: {{ player.decision }}</p>
+    <p>Your team's decision: {{ teammates_decision }}</p>
+    <p>Opponents' decisions: {{ opponents_decision }}</p>
+
+    <p>Your payoff: {{ player.payoff }}</p>
+
+    <!-- Display the random number and round status -->
+    {% if player.group.number < 40 %}
+        <p>Random number is {{ player.group.number }} and this is the LAST round</p>
+    {% else %}
+        <p>Random number is {{ player.group.number }} and there is going to be a next round</p>
+    {% endif %}
+
+    <!-- Form to move to the next page -->
+    <form method="post">
+        <button type="submit">Next</button>
+    </form>
+{% endblock %}

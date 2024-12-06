@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    <h1>Welcome to the Experiment</h1>
+
+    <div class="instructions">
+        <p>
+            Thank you for participating in our experiment. This study aims to examine people's willingness to engage in political participation. Please imagine that you are a student representative for your department, and your department has a new building that is about to open. Before the building is put to use, you have the opportunity to join a meeting with the university board members to discuss student needs for the building, such as adding more study rooms, relaxation areas, or other facilities that students may want.
+        </p>
+        <p>
+            The decision you make about whether to cooperate with the university or not will directly affect your payoffs, and, in some cases, the payoffs of others. In this experiment, you will be paired with different participants and will be asked to make decisions that may lead to cooperation or non-cooperation. The payoffs you receive will be determined by both your decisions and the decisions made by others.
+        </p>
+        <p>
+            The experiment consists of five rounds, and in each round, you will be asked to make a decision. At the beginning of each new round, you will be randomly assigned to a different participant. You will see a payoff matrix that shows how different choices will affect your earnings.
+        </p>
+        <p>
+            Please note that there are no right or wrong answers; we are interested in understanding how people make decisions in different situations.
+        </p>
+
+        {% if intro_group == 'intro_treatment' %}
+        <div class="treatment-strategy">
+            <h3>Suggested Strategy for the Game</h3>
+            <p>
+                Since you will be participating in several rounds with different participants, it might be beneficial for you to consider a consistent strategy. For example, choosing to cooperate initially can lead to positive mutual payoffs over time. Observing the behavior of the other participant and adjusting your strategy accordingly may also help you maximize your earnings.
+            </p>
+            <h3>Additional Information:</h3>
+            <p>
+                During the decision-making process, here are six different strategies you can use to maximize your benefit. Please read them carefully and decide which strategies you are more likely to use later:
+            </p>
+            <ul>
+                <li><strong>Always Defect (ALLD):</strong> A strategy where you always choose not to cooperate, regardless of what the other participant does.</li>
+                <li><strong>Always Cooperate (ALLC):</strong> A strategy where you always choose to cooperate, regardless of what the other participant does.</li>
+                <li><strong>Tit-For-Tat (TFT):</strong> A strategy where you start by cooperating, and then in subsequent rounds, you do whatever the other participant did in the previous round.</li>
+                <li><strong>Grim-Trigger (GRIM):</strong> A strategy where you start by cooperating, but if the other participant ever defects, you defect in all future rounds.</li>
+                <li><strong>Win-Stay-Lose-Shift (WSLS):</strong> A strategy where you continue with the same choice if you received a high payoff, but switch if you received a low payoff.</li>
+                <li><strong>Trigger Strategy with Two Punishment Periods (T2):</strong> A strategy where you start by cooperating, but if the other participant defects, you punish them by defecting for the next two rounds before returning to cooperation.</li>
+            </ul>
+        </div>
+        {% endif %}
+
+        <p>
+            When you are ready to begin, please click the "Next" button below to proceed to the first part of the experiment.
+        </p>
+    </div>
+
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+{% endblock %}
+

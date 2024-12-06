@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+    <h1>Instructions</h1>
+    <p>{{ instructions|safe }}</p>
+
+    <h1>Make your decision</h1>
+    <form method="post">
+        {{ formfields }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Team Chat</h1>
+
+    <div id="chat-box" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll;">
+        {% for msg in chat_messages %}
+            <p><strong>{{ msg.player.participant.label }}:</strong> {{ msg.message }}</p>
+        {% endfor %}
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="chat_message" rows="3" style="width: 100%;"></textarea>
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}
+
